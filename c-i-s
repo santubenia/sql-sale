@@ -1,0 +1,12 @@
+create table sales(sales_no number(20),sales_name varchar(20),branch varchar(25),sales_amount number(10),DOB date);
+insert into sales values(1020,'AutoMobiles','Hyderabad',68452,'28-JUL-1985');
+insert into sales values(1021,'Electronics','Secundrabad',47850,'22-DEC-1985');
+insert into sales values(1022,'Electronics','Secundrabad',44500,'03-JUN-1986');
+insert into sales values(1023,'AutoMobiles','Hyderabad',74200,'28-SEP-1996');
+insert into sales values(1024,'AutoMobiles','Hyderabad',54500,'28-OCT-1984');
+select * from sales;
+select branch,sum(sales_amount) from sales group by branch;
+select branch,avg(sales_amount) from sales group by branch;
+
+select sales_name,DOB from sales where substr(DOB,4,3)='DEC';
+select sales_name,to_char(DOB,'MONTH')from sales ORDER BY TO_CHAR (DOB,'MONTH');
